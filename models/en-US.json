@@ -1,0 +1,30 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "how many hatch matches do i have",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "samples": [
+            "how many Hatch matches do I have",
+            "how many Hatch match do I have",
+            "Do I have Hatch matches today",
+            "jatch matches"
+          ]
+        }
+      ]
+    }
+  }
+}
