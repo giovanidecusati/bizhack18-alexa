@@ -5,9 +5,9 @@
         "en-US": {
           "summary": "Sample Short Description",
           "examplePhrases": [
-            "Alexa how many Hatch matches do I have",
-            "hatch",
-            "maches"
+            "Alexa, open hatch match",
+            "Alexa, how many Hatch matches do I have",
+            "Alexa, do I have Hatch matches today"
           ],
           "name": "Bizhack18",
           "description": "Sample Full Description"

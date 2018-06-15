@@ -8,28 +8,41 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = 'You have two Hatch matches with Pheobe and Wilbert and three properties that fit your criteria. One inspection is today at 2pm Mascot. Want me to add it on your calendar?';
+    const speechText = 'You have two Hatch matches with Tony and Lara and three properties that fits your criteria. One inspection is today at 2pm Mascot. Want me to add it on your calendar?';
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Yes', speechText)
       .getResponse();
   },
 };
 
-const HelloWorldIntentHandler = {
-  canHandle(handlerInput) {
+const HatchMatchIntentHandler = {  
+  canHandle(handlerInput) {  
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-      && handlerInput.requestEnvelope.request.intent.name === 'HelloWorldIntent';
+      && handlerInput.requestEnvelope.request.intent.name === 'HatchMatchIntent';
   },
   handle(handlerInput) {
-    // const speechText = 'Hello World!';
-    const speechText = 'Schedule added with success!';
+    const speechText = 'Schedule added in your calendar';
 
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard('Yes', speechText)
+      .withShouldEndSession(false)
+      .getResponse();
+  },
+};
+
+const WhatDoYouThinkAboutHatchMatchIntentHandler = {  
+  canHandle(handlerInput) {  
+    return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+      && handlerInput.requestEnvelope.request.intent.name === 'WhatDoYouThinkAboutHatchMatchIntent';
+  },
+  handle(handlerInput) {
+    const speechText = 'The weather in Vegas is awsome, have fun';
+
+    return handlerInput.responseBuilder
+      .speak(speechText)
+      .withShouldEndSession(true)
       .getResponse();
   },
 };
@@ -45,7 +58,6 @@ const HelpIntentHandler = {
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Alexa how many Hatch matches do I have', speechText)
       .getResponse();
   },
 };
@@ -61,7 +73,6 @@ const CancelAndStopIntentHandler = {
 
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard('Alexa how many Hatch matches do I have', speechText)
       .getResponse();
   },
 };
@@ -96,7 +107,8 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
-    HelloWorldIntentHandler,
+    HatchMatchIntentHandler,
+    WhatDoYouThinkAboutHatchMatchIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler

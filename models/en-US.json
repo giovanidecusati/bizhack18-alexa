@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "how many hatch matches do i have",
+      "invocationName": "hatch match",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -16,12 +16,18 @@
           "samples": []
         },
         {
-          "name": "HelloWorldIntent",
+          "name": "HatchMatchIntent",
           "samples": [
+            "open hatch match",
             "how many Hatch matches do I have",
-            "how many Hatch match do I have",
-            "Do I have Hatch matches today",
-            "jatch matches"
+            "how many Hatch match do I have"
+          ]
+        },
+        {
+          "name": "WhatDoYouThinkAboutHatchMatchIntent",
+          "samples": [
+            "what do you think about hatch match",
+            "what do you think"
           ]
         }
       ]
