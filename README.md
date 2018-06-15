@@ -27,5 +27,5 @@ Or click [here](./instructions/7-cli.md) for instructions using the ASK CLI (com
 
 ```
 $ ask deploy
-$ ask simulate -l en-US -t "how many hatch matches do i have"
+$ ask simulate -l en-US -t "open hatch match"
 ```
